@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#0d0d0d">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- ===== 品牌Logo ===== -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp">
+
+            <ImageView
+                android:id="@+id/brandLogo"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DUDOU AI"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:letterSpacing="0.1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CDKey 生成器"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:layout_marginTop="2dp"/>
+        </LinearLayout>
+
+        <!-- ===== 授权类型卡片选择 ===== -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="授权类型"
+            android:textSize="11sp"
+            android:textColor="#888888"
+            android:layout_marginBottom="8dp"
+            android:paddingStart="4dp"/>
+
+        <LinearLayout
+            android:id="@+id/licenseCards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <!-- 月卡 -->
+            <LinearLayout
+                android:id="@+id/cardMonthly"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="14dp"
+                android:background="@drawable/license_card_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30天"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#a855f7"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="月卡"
+                    android:textSize="12sp"
+                    android:textColor="#cccccc"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <!-- 年卡 -->
+            <LinearLayout
+                android:id="@+id/cardYearly"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="14dp"
+                android:background="@drawable/license_card_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="365天"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#a855f7"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="年卡"
+                    android:textSize="12sp"
+                    android:textColor="#cccccc"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <!-- 终生 -->
+            <LinearLayout
+                android:id="@+id/cardLifetime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="14dp"
+                android:background="@drawable/license_card_bg"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="永久"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#a855f7"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="终生"
+                    android:textSize="12sp"
+                    android:textColor="#cccccc"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ===== 最大激活数 ===== -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="最大激活数"
+            android:textSize="11sp"
+            android:textColor="#888888"
+            android:layout_marginBottom="8dp"
+            android:paddingStart="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="#1a1a1a"
+            android:padding="4dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/btnMinus"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:text="−"
+                android:textSize="24sp"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="#2a2a2a"/>
+
+            <TextView
+                android:id="@+id/tvMaxActivations"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="2"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:background="#1a1a1a"/>
+
+            <TextView
+                android:id="@+id/btnPlus"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:text="+"
+                android:textSize="24sp"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="#2a2a2a"/>
+        </LinearLayout>
+
+        <!-- ===== 生成数量 ===== -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="生成数量"
+            android:textSize="11sp"
+            android:textColor="#888888"
+            android:layout_marginBottom="8dp"
+            android:paddingStart="4dp"/>
+
+        <LinearLayout
+            android:id="@+id/countChips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="28dp">
+
+            <TextView
+                android:id="@+id/chip1"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="1"
+                android:textSize="14sp"
+                android:textColor="#a78bfa"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="#1a1a2e"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/chip5"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="5"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="#1a1a1a"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/chip10"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="10"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="#1a1a1a"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/chip20"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="20"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="#1a1a1a"/>
+        </LinearLayout>
+
+        <!-- ===== 生成按钮 ===== -->
+        <Button
+            android:id="@+id/generateBtn"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="生成 CDKey"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:backgroundTint="#a855f7"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- ===== 结果区域 ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1a1a1a"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="生成结果"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"/>
+
+                <TextView
+                    android:id="@+id/btnClear"
+                    android:layout_width="40dp"
+                    android:layout_height="32dp"
+                    android:text="清空"
+                    android:textSize="11sp"
+                    android:textColor="#888888"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="#252525"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/btnCopy"
+                    android:layout_width="40dp"
+                    android:layout_height="32dp"
+                    android:text="复制"
+                    android:textSize="11sp"
+                    android:textColor="#a78bfa"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="#252525"/>
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fillViewport="false">
+
+                <TextView
+                    android:id="@+id/resultText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="点击「生成 CDKey」按钮开始"
+                    android:textSize="12sp"
+                    android:textColor="#555555"
+                    android:fontFamily="monospace"
+                    android:padding="12dp"
+                    android:background="#111111"
+                    android:minHeight="120dp"/>
+            </ScrollView>
+        </LinearLayout>
+
+        <!-- ===== 状态信息 ===== -->
+        <TextView
+            android:id="@+id/infoText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="算法: HMAC-SHA256 | 与桌面端完全兼容"
+            android:textSize="10sp"
+            android:textColor="#444444"
+            android:gravity="center"
+            android:layout_marginTop="12dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
